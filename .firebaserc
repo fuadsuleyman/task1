@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "task1-8281e": {
+      "hosting": {
+        "task1": [
+          "task1-8281e"
+        ]
+      }
+    }
+  }
+}
