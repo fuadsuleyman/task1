@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+      <h4>Task 1 solution by Fuad Suleymanov</h4>
+  </div>
+  <div class="row">
+    <h5><em>Uniqueness of Numbers’ Repeats</em></h5>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <ul class="list-group">
+          <li class="list-group-item">Some comments about this litle app:</li>
+          <li class="list-group-item list-group-item-light"><small>- I use angular 9 app, with bootsrap 4</small></li>
+          <li class="list-group-item list-group-item-light"><small>- about lojic whitc i use I had step by step comments in app.component.ts file</small></li>
+          <li class="list-group-item list-group-item-light"><small>- You may enter not only numbers, I clean non number value via regEx code</small></li>
+          <li class="list-group-item list-group-item-light"><small>- Result button disabled if input is empty</small></li>
+        </ul>
+      </div>
+      <form [formGroup]="task1Form" (ngSubmit)="onAddArray()">
+        <div class="row">
+          <label for="array">Please enter you array of numbers</label>
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            placeholder="Enter here" 
+            formControlName="numbers"
+            [ngClass]="{
+              'is-invalid': numbers.invalid && numbers.touched,
+              'is-valid': numbers.valid && numbers.touched
+            }">
+        </div>
+        <div class="row">
+          <p>
+            You Entered: {{ enteredNumArray }}
+          </p>
+        </div>
+        <div class="row">
+          <button
+            class="btn btn-success"
+            type="submit"
+            [disabled]="!task1Form.valid">Get Result</button>
+        </div>
+        <hr>
+        <div class="row">
+          <h3 [ngClass]="{
+            'green': result === true, 
+            'red': result === false || result === 'You are out of constraints',
+            'black': result === null
+          }">
+            Result: {{ result }}
+        </h3>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
